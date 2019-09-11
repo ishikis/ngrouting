@@ -13,8 +13,13 @@ export class ProductComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    let id:number = +this.route.snapshot.paramMap.get('id');
-    this.selectedProduct = products.find(i => i.id == id);
+
+    // let id: number = +this.route.snapshot.paramMap.get('id');
+    // this.selectedProduct = products.find(i => i.id == id);
+
+    this.route.paramMap.subscribe(x => {
+      this.selectedProduct = products.find(i => i.id == +x.get('id'));
+    })
   }
 
 }
