@@ -9,17 +9,10 @@ import { UsersComponent } from './users/users.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductComponent } from './products/product/product.component';
+import { UserComponent } from './users/user/user.component';
+import { EditProductComponent } from './products/edit-product/edit-product.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'products', component: ProductsComponent },
-  // { path: 'products:/page:/order', component: ProductsComponent },
-  { path: 'products/:id', component: ProductComponent },
-  { path: 'users', component: UsersComponent },
-  { path: '**', component: NotfoundComponent }
-
-]
 
 @NgModule({
   declarations: [
@@ -29,11 +22,13 @@ const appRoutes: Routes = [
     UsersComponent,
     CategoriesComponent,
     NotfoundComponent,
-    ProductComponent
+    ProductComponent,
+    UserComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
 
   ],
   providers: [],
